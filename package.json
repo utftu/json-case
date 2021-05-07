@@ -35,6 +35,9 @@
   "type": "module",
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
