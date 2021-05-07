@@ -6,8 +6,10 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
-    "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json,ts}\""
+    "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json,ts}\"",
+    "types": "tsc -p tsconfig.types.json"
   },
+  "types": "./dist/types/index.d.ts",
   "jest": {
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
