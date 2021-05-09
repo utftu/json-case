@@ -1,4 +1,4 @@
-import {snakeToCamel, camelToSnake} from './converters';
+import {snakeToCamel, camelToSnake} from './converters/index';
 
 function isObject(data): data is Object {
   if (data === null || data === undefined) {
@@ -8,7 +8,7 @@ function isObject(data): data is Object {
   return prototype === Object.prototype || prototype === null;
 }
 
-export class CaseConverter {
+export class JsonCase {
   static converters = {
     snakeToCamel,
     camelToSnake,
@@ -35,6 +35,7 @@ export class CaseConverter {
         if (!object.hasOwnProperty(key)) {
           continue;
         }
+
 
         if (Array.isArray(objects[key])) {
           for (const arrayElem of objects[key]) {
@@ -64,4 +65,4 @@ export class CaseConverter {
   }
 }
 
-export default CaseConverter;
+export default JsonCase;

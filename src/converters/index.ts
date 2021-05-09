@@ -1,4 +1,4 @@
-import {snakeToCamelStr, camelToSnakeStr} from '../helpers';
+import {snakeToCamelStr, camelToSnakeStr} from '../helpers/index';
 
 function base(
   test: (key: string) => boolean,

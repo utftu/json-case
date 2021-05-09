@@ -4,8 +4,11 @@
     "baseUrl": ".",
     "lib": ["esnext"],
     "checkJs": false,
-    "allowJs": true
+    "allowJs": true,
+
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node"
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
 }

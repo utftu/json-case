@@ -1,5 +1,5 @@
 import {babel} from '@rollup/plugin-babel';
-import babelConfig from './babel.config.cjs';
+import babelConfig from './babel.config.js';
 import {terser} from 'rollup-plugin-terser';
 import {dirname, join} from 'path';
 import {fileURLToPath} from 'url';
