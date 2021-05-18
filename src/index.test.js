@@ -1,52 +1,58 @@
-import JsonCase from './index';
+import JsonCase from './index.js';
+
 describe('CaseConverter', () => {
-    it('snake => camel', async () => {
-        const caseConverter = new JsonCase(JsonCase.converters.snakeToCamel);
-        const result = await caseConverter.convert({
-            a_b: {
-                a_b: 'ab',
-            },
-            b_c: 'bc',
-        });
-        expect(result).toEqual({
-            aB: {
-                aB: 'ab',
-            },
-            bC: 'bc',
-        });
+  it('snake => camel', async () => {
+    const jsonCase = new JsonCase(JsonCase.converters.snakeToCamel);
+    const result = await jsonCase.convert({
+      a_b: {
+        a_b: 'ab',
+      },
+      b_c: 'bc',
+      array: [
+        {
+          object_key: 'ab',
+        },
+        'stringName',
+      ],
     });
-    it.only('snake => camel: array', async () => {
-        const caseConverter = new JsonCase(JsonCase.converters.snakeToCamel);
-        const result = await caseConverter.convert({
-            array: [
-                {
-                    a_b: 'ab',
-                },
-                'b_c'
-            ]
-        });
-        expect(result).toEqual({
-            array: [
-                {
-                    aB: 'ab'
-                },
-                'b_c'
-            ]
-        });
+    expect(result).toEqual({
+      aB: {
+        aB: 'ab',
+      },
+      bC: 'bc',
+      array: [
+        {
+          objectKey: 'ab',
+        },
+        'stringName',
+      ],
     });
-    it('camel => snake', async () => {
-        const caseConverter = new JsonCase(JsonCase.converters.camelToSnake);
-        const result = await caseConverter.convert({
-            aB: {
-                aB: 'ab',
-            },
-            bC: 'bc',
-        });
-        expect(result).toEqual({
-            a_b: {
-                a_b: 'ab',
-            },
-            b_c: 'bc',
-        });
+  });
+  it('camel => snake', async () => {
+    const jsonCase = new JsonCase(JsonCase.converters.camelToSnake);
+    const result = await jsonCase.convert({
+      aB: {
+        aB: 'ab',
+      },
+      bC: 'bc',
+      array: [
+        {
+          objectKey: 'ab',
+        },
+        'stringName',
+      ],
     });
+    expect(result).toEqual({
+      a_b: {
+        a_b: 'ab',
+      },
+      b_c: 'bc',
+      array: [
+        {
+          object_key: 'ab',
+        },
+        'stringName',
+      ],
+    });
+  });
 });
