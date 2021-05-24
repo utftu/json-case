@@ -1,9 +1,8 @@
-import JsonCase from './index.js';
+import {camelToSnake, snakeToCamel} from './index.js';
 
 describe('CaseConverter', () => {
   it('snake => camel', async () => {
-    const jsonCase = new JsonCase(JsonCase.converters.snakeToCamel);
-    const result = await jsonCase.convert({
+    const result = await snakeToCamel({
       a_b: {
         a_b: 'ab',
       },
@@ -28,9 +27,8 @@ describe('CaseConverter', () => {
       ],
     });
   });
-  it('camel => snake', async () => {
-    const jsonCase = new JsonCase(JsonCase.converters.camelToSnake);
-    const result = await jsonCase.convert({
+  it('camel => snake', () => {
+    const result = camelToSnake({
       aB: {
         aB: 'ab',
       },

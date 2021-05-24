@@ -1,4 +1,4 @@
-export declare class CaseConverter {
+export declare class JsonCase {
   static converters: {
     snakeToCamel: (object: object) => void;
     camelToSnake: (object: object) => void;
@@ -8,4 +8,4 @@ export declare class CaseConverter {
   private parse;
   convert<T>(data: T): Promise<T>;
 }
-export default CaseConverter;
+export default JsonCase;
