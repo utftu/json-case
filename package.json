@@ -6,9 +6,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "build": "rollup -c",
-    "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json,ts}\"",
-    "types": "tsc -p tsconfig.types.json",
-    "prepublish": "npm run format && npm run build && npm run types && npm run test"
+    "format": "prettier --write \"./**/*.{js,mjs,cjs,md,json,ts}\""
   },
   "types": "./dist/index.d.ts",
   "type": "module",
