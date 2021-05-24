@@ -2,7 +2,7 @@
   "name": "json-case",
   "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/cjs/index.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "build": "rollup -c",
@@ -10,7 +10,7 @@
     "types": "tsc -p tsconfig.types.json",
     "prepublish": "npm run format && npm run build && npm run types && npm run test"
   },
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     "development": {
