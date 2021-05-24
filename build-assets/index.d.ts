@@ -1,11 +1,11 @@
-export declare class JsonCase {
-  static converters: {
-    snakeToCamel: (object: object) => void;
-    camelToSnake: (object: object) => void;
-  };
-  private readonly converter;
-  constructor(converter: Function);
-  private parse;
-  convert<T>(data: T): Promise<T>;
+export declare function camelToSnake(data: any): any
+export declare function snakeToCamel(data: any): any
+export declare function custom(data: any, converter: Function): any
+
+declare const _default: {
+  camelToSnake,
+  snakeToCamel,
+  custom
 }
-export default JsonCase;
+
+export default _default;
