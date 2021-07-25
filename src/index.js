@@ -67,6 +67,8 @@ export {
 }
 
 export default {
+  camelToSnakeStr,
+  snakeToCamelStr
   snakeToCamel,
   camelToSnake,
   custom
