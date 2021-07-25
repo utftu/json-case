@@ -1,7 +1,9 @@
 import {
   snakeToCamel as snakeToCamelConverter,
   camelToSnake as camelToSnakeConverter,
+  createConverter
 } from './converters/index.js';
+import {camelToSnakeStr, snakeToCamelStr} from './helpers/index.js'
 
 function isObject(data) {
   if (data === null || data === undefined) {
@@ -58,11 +60,14 @@ function convert(data, converter) {
 
 export const snakeToCamel = (data) => convert(data, snakeToCamelConverter);
 export const camelToSnake = (data) => convert(data, camelToSnakeConverter);
-
-export {convert as custom};
+export const custom = (test, convertStr) => createConverter(test, convertStr)
+export {
+  camelToSnakeStr,
+  snakeToCamelStr
+}
 
 export default {
   snakeToCamel,
   camelToSnake,
-  custom: convert,
+  custom
 };

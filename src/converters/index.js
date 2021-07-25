@@ -1,6 +1,6 @@
 import {snakeToCamelStr, camelToSnakeStr} from '../helpers/index.js';
 
-function base(test, convertStr) {
+export function createConverter(test, convertStr) {
   return function (object) {
     for (const key in object) {
       if (!object.hasOwnProperty(key)) {
@@ -18,8 +18,8 @@ function base(test, convertStr) {
   };
 }
 
-export const snakeToCamel = base((key) => key.includes('_'), snakeToCamelStr);
-export const camelToSnake = base(
+export const snakeToCamel = createConverter((key) => key.includes('_'), snakeToCamelStr);
+export const camelToSnake = createConverter(
   (key) => key.match(/\w[A-Z]/) !== null,
   camelToSnakeStr
 );
