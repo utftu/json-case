@@ -1,6 +1,6 @@
 {
   "name": "json-case",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "./dist/cjs/index.js",
   "scripts": {
